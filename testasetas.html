@@ -1,0 +1,56 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'lightblue';
+    pincel.fillRect(0,0,600,400);
+
+    var x = 20;
+    var y = 20;
+    var velocidade = 2;
+
+    var cima = 38;
+    var baixo = 40;
+    var esquerda = 37;
+    var direita = 39;
+
+    function desenhaQuadrado(x,y) {
+
+        pincel.fillStyle = 'red'
+        pincel.fillRect(x,y,20,20);
+    }
+
+    function limpaTela() {
+
+        pincel.clearRect(0,0,600,400);
+    }
+
+    function move() {
+
+        limpaTela();
+        desenhaQuadrado(x,y)
+    }
+
+    setInterval(move,20);
+
+    function setas(evento) {
+
+        if(evento.keycode == cima) {
+            y = y - velocidade;
+        } else if(evento.keycode == baixo) {
+            y = y + velocidade;
+        } else if(evento.keycode == esquerda) {
+            x = x - velocidade;
+        } else if(evento.keycode == direita) {
+            x = x + velocidade;
+        }
+    }
+
+    document.onkeydown = setas;
+
+
+
+</script>

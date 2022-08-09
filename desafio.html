@@ -1,0 +1,73 @@
+<meta charset="UTF-8">
+
+<input/>
+
+<button>Check it out!</button>
+
+<script>
+
+    function sorteio() {
+
+        return Math.round(Math.random() * 60);
+    }
+
+    function sorteiaDezenas(quantidade) {
+
+        var dezenas = [];
+
+        var contador = 1;
+
+        while(contador <= quantidade) {
+
+            var aleatorio = sorteio();
+
+            var sorteadoIgual = false;
+
+            for(i = 0; i < dezenas.length; i++) {
+
+                if(dezenas[i] == aleatorio) {
+                    sorteadoIgual = true;
+                    break;
+                }
+            }
+
+            if (sorteadoIgual == false) {
+
+                dezenas.push(sorteio());
+                contador++;
+            }          
+        }
+
+        return dezenas;
+    }
+
+    var dezenas = sorteiaDezenas(6);
+    
+    console.log(dezenas);
+    
+    function verifica () {
+
+        var palpite = document.querySelector("input");
+
+        for(contador = 1; contador <= dezenas.length; contador++) {
+
+            if(palpite.value == dezenas[contador]) {
+                
+                alert("Você acertou!!!");
+                break;
+            
+            } else {
+                
+                alert("Você errou!!!");
+                contador++;
+            } 
+        }
+    
+        palpite.value = "";
+        palpite.focus();  
+    }
+    
+    var btn = document.querySelector("button");
+    btn.onclick = verifica;
+
+</script>

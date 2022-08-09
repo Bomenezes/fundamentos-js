@@ -1,0 +1,45 @@
+<canvas width="600" height="400"></canvas>
+
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    function escreveAno(x,y, ano) {
+
+        pincel.font = '15px Georgia';
+        pincel.fillStyle = 'black';
+        pincel.fillText(ano,x,y-10);
+    }
+
+    function desenhaRect(x,y,altura,cor) {
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x,y,50,altura);
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(x,y,50,altura);
+    }
+
+    
+
+    function desenhaTorre(x,y,serie,cores,ano) {
+
+        escreveAno(x,y,ano);
+
+        var somaAltura = 0;
+        
+        for(var i = 0; i < serie.length; i++) {
+            var algura = serie[i];
+            desenhaRect(x,y+somaAltura,serie[i],cores[i]);
+            somaAltura = somaAltura + alturas[i];
+        }   
+    }
+
+    var alturas = [50, 35, 10, 5];
+    var cores = ['blue', 'green', 'yellow', 'red'];
+
+    desenhaTorre(50, 50, alturas, cores, '2022');
+
+
+</script>

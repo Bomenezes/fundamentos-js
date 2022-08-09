@@ -1,0 +1,51 @@
+<!-- esquadro.html -->
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+
+
+    function desenhaTriangulo(xa,ya, xc, yc, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.moveTo(xa,ya);
+        pincel.lineTo(xa,yc);
+        pincel.lineTo(xc,yc);
+        pincel.fill();
+
+        pincel.fillStyle="white";
+        pincel.beginPath();
+        pincel.moveTo(2*xa, 3.5*ya);
+        pincel.lineTo(2*xa, 0.875*yc);
+        pincel.lineTo(5.5*xa, 0.875*yc);
+        pincel.fill();
+    }
+
+
+    var serie
+
+    desenhaTriangulo(50,50,400,400, 'black');
+  
+
+
+    /*
+    pincel.fillStyle="black";
+    pincel.beginPath();
+    pincel.moveTo(50, 50);
+    pincel.lineTo(50, 400);
+    pincel.lineTo(400, 400);
+    pincel.fill();
+
+    pincel.fillStyle="white";
+    pincel.beginPath();
+    pincel.moveTo(100, 175);
+    pincel.lineTo(100, 350);
+    pincel.lineTo(275, 350);
+    pincel.fill();*/
+
+</script>

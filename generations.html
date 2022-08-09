@@ -1,0 +1,20 @@
+
+
+<meta charset="UTF-8">
+
+<script>
+        
+    function pulaLinha(){
+        document.write("<br>");
+    }
+
+    const anoDescobrimento = 1500;
+    const intervaloGeracao = 28
+
+    function calcula(anoAtual) {
+        document.write(Math.round((anoAtual - anoDescobrimento)/intervaloGeracao) + " gerações de brasileiros já nasceram desde a chegada dos portugueses.");
+        pulaLinha();
+    }
+
+    calcula(2022);
+</script>

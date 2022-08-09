@@ -1,0 +1,26 @@
+<html>
+    <script>
+        // Criar funcção verificaNumeroPrimo(numero){}
+        // Iterar números menores que o parâmtro maiores que 1 para verificar se há resto zero
+        // Retornar resultado:
+        // 'O número X é primo.'
+        //'O número X não é primo.'
+        
+        function verificaNumeroPrimo(numero) {
+        
+            let restultado;
+
+            for (let i = numero - 1; i > 1; i--) {
+                if (numero % i === 0) {
+                    // console.log(i);
+                    resultado = `O número ${numero} não é primo.`;
+                    break;
+                } else {
+                    resultado = `O número ${numero} é primo.`;
+                }
+            }
+
+            console.log(resultado);
+        }
+    </script>
+</html>

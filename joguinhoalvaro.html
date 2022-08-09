@@ -1,0 +1,67 @@
+<canvas width="600" height="400"></canvas>
+
+
+<script>
+
+    //Criação do canvas:
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightblue';
+    pincel.fillRect(0,0,600,400);
+
+    //Variáveis de posição, tamanho e cor do alvo:
+    
+    var xAleatorio;
+    var yAleatorio;
+    var raios = [30,20,10];
+    var cores = ['red','white','red'];
+
+    //Funções de dinâmica do jogo:
+    
+    function limpaTela() {
+        pincel.clearRect(0,0,600,400);
+    }
+
+    function sorteio(maximo) {
+        return Math.floor(Math.random() * maximo);
+    }
+
+    function criaCirculo(xAleatorio,yAleatorio,raio,cor) {
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(xAleatorio,yAleatorio,raio,0,2*Math.PI) ;
+        pincel.fill();
+    }
+
+    function desenhaAlvo(xAleatorio,yAleatorio) {
+        for(var i = 0; i < 3; i++) {
+            criaCirculo(xAleatorio,yAleatorio,raios[i],cores[i]);
+        }
+    }
+
+    function apareceAlvo() {
+        limpaTela();
+        xAleatorio = sorteio(600);
+        yAleatorio = sorteio(400);
+        desenhaAlvo(xAleatorio,yAleatorio);
+    }
+
+    setInterval(apareceAlvo,1000);
+
+    function acertou(evento) {
+
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+        if((x > xAleatorio - raios[2]) 
+            && (x < xAleatorio + raios[2])
+            && (y > yAleatorio - raios[2])
+            && (y < yAleatorio + raios[2])) {
+                alert('Tiro ao Álvaro!!!');
+        }
+    }
+
+    tela.onclick = acertou;
+
+</script>

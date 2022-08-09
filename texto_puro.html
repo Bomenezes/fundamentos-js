@@ -1,0 +1,34 @@
+
+<meta charset="UTF-8">
+
+<h1>Calculadora de consumo:</h1>
+<br>
+
+<form>
+    <label for="volume">Digite o volume total do tanque de combústivel:</label>
+    <input type="number" id="volume" name="volume">
+
+    <br>
+    
+    <p><strong>Qual combustível utilizado?</strong></p>
+    <label for="gas"><input type="radio" id="gas" name="fuel" checked>Gasolina</label>
+    <label for="alc"><input type="radio" id="alc" name="fuel" checked>Álcool</label>
+    
+    <br><br>
+    
+    <label for="distance">Digite o total da distância percorrida:</label>
+    <input type="number" id="distance" name="distance">
+</form>
+
+<script>
+    var tanque = document.querySelector('input[name=volume]');
+    var combu = document.querySelector('input[name=fuel]');
+    var totalDistance = document.querySelector('input[name=distance]');
+    var consumo = totalDistance / tanque;
+    
+    document.write("O consumo de " + combu + " neste carro foi de " + consumo + " km/L.")
+    
+</script>
+
+
+

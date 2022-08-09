@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+
+    var numeroPensado = Math.round((Math.random() * 10));
+
+    var palpite = parseInt(prompt("Diga qual é o nome pensado: "));
+
+    if (palpite == numeroPensado) {
+        mostra("Você acertou!");
+    } else {
+        mostra("Se fudeuson!");
+    }
+
+</script> 

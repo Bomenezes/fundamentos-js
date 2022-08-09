@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function sorteio(n) {
+
+        return Math.round(Math.random() * n);
+    }
+
+    var resultado = sorteio(10);
+
+    var palpite = parseInt(prompt("Escolha um número de 0 a 10: "));
+
+    if (palpite == resultado) {
+        mostra("Jackpot!!!");
+    } else {
+        pulaLinha();
+        mostra("Perdeu dinheiro, malandro! O número sorteado foi o " + resultado + "!");
+    }
+
+</script> 

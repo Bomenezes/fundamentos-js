@@ -1,0 +1,27 @@
+<canvas width="600" height="400"></canvas>
+
+
+<script>
+
+    var serie = [];
+    
+    function exibe(texto) {
+
+        document.write(texto);
+    }
+
+    function preenche() {
+        
+        while(serie.length < 6) {
+            
+            var intro = parseInt(prompt('Insira uma dezena: '));
+            serie.push(intro);
+        }
+        exibe(serie);
+    }
+
+    preenche();
+
+
+
+</script>

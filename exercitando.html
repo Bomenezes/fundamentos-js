@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha(){
+
+        document.write('<br><br>');
+    }
+
+    function exibeResultado(texto) {
+
+        document.write(texto);
+        pulaLinha();
+    }
+
+    var ano = 1930;
+
+    while(ano <= 2022) {
+        
+        if(ano != 1942 && ano != 1946){
+            exibeResultado(ano);
+        }
+        ano += 4;
+    }
+
+    exibeResultado('Fim')
+
+</script>

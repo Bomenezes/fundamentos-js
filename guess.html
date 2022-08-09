@@ -1,0 +1,28 @@
+
+<meta charset="UTF-8">
+
+<input/>
+<button>Verifique se acertou aqui!</button>
+
+<script>
+
+    var premio = Math.round(Math.random());
+
+    var palpite = document.querySelector("input");
+    palpite.focus();
+
+    function verifica() {
+        if (palpite.value == premio) {
+            alert("Você acertou!!!");
+        } else {
+            alert("Você errou!!!");
+        }
+        palpite.value = "";
+        palpite.focus();
+    }
+
+    var btn = document.querySelector("button");
+    btn.onclick = verifica;
+
+    
+</script>
